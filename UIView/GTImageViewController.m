@@ -12,8 +12,7 @@
 
 @end
 @implementation GTImageViewController
-
-@synthesize imageView = mImageView;
+@synthesize imageView;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,25 +22,23 @@
     return self;
 }
 
-
 - (void)viewDidLoad
 {
- 
-    NSLog(@"Cheese");
-   
-    
     [super viewDidLoad];
-    NSAssert(self.imageView, @"self.imageView is nil. Check your IBOutlet connections");
-    UIImage* image = [UIImage imageNamed:@"workExample.jpg"];
-    NSAssert(image, @"image is nil. Check that you added the image to your bundle and that the filename above matches the name of you image.");
-    self.imageView.backgroundColor = [UIColor blackColor];
-    self.imageView.clipsToBounds = YES;
-    self.imageView.image = image;
     
+    NSArray *imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"workExample.jpg"], nil];
+    
+    
+    
+   
+    NSLog(@"imageView.animationImages %@", imageView.animationImages[0]);
+    imageView.animationImages = imageArray;
+    imageView.animationDuration = 2;
+    
+    [self.view addSubview:imageView];
+    [imageView startAnimating];
+
 }
-
-
-
 
 - (void)didReceiveMemoryWarning
 {

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface GTImageViewController : UIViewController{
-    UIImageView* mImageView;
+    UIImageView* imageView;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
