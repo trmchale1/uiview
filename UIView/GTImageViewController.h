@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GTImageViewController : UIViewController{
+@interface GTImageViewController : UIViewController<UIGestureRecognizerDelegate>{
     UIImageView* imageView;
 }
 
 @property (nonatomic, retain) IBOutlet UIImageView* imageView;
 
-
+//- (IBAction)swipe:(UISwipeGestureRecognizer *)sender;
 
 @end

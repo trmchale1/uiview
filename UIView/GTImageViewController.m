@@ -22,19 +22,25 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
+    
+    swipe.numberOfTouchesRequired = 1;
+    swipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    
     [super viewDidLoad];
     
-    NSArray *imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"workExample.jpg"], nil];
-    
-    
-    
-   
-    NSLog(@"imageView.animationImages %@", imageView.animationImages[0]);
+    NSArray *imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"workExample.jpg"], [UIImage imageNamed:@"app1.png"],
+                           [UIImage imageNamed:@"app2.png"], nil];
     imageView.animationImages = imageArray;
-    imageView.animationDuration = 2;
+    imageView.animationDuration = 10;
+    NSLog(@"imageView.animationImages %@", imageView.animationImages[0]);
+
+    imageView.userInteractionEnabled = YES;
     
+    [self.view addGestureRecognizer:swipe];
     [self.view addSubview:imageView];
     [imageView startAnimating];
 
@@ -48,5 +54,10 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+}
+
+- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
+    
+    NSLog(@"Screen was swiped");
 }
 @end
