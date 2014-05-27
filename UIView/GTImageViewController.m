@@ -9,7 +9,7 @@
 #import "GTImageViewController.h"
 
 @interface GTImageViewController ()
-
+@property (nonatomic, strong) NSArray *imageArray;
 @end
 @implementation GTImageViewController
 @synthesize imageView;
@@ -23,6 +23,15 @@
 }
 
 
+
+
+
+
+
+
+
+
+
 - (void)viewDidLoad
 {
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipe:)];
@@ -32,19 +41,58 @@
     
     [super viewDidLoad];
     
-    NSArray *imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"workExample.jpg"], [UIImage imageNamed:@"app1.png"],
+    self.imageArray = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"workExample.jpg"], [UIImage imageNamed:@"app1.png"],
                            [UIImage imageNamed:@"app2.png"], nil];
-    imageView.animationImages = imageArray;
-    imageView.animationDuration = 10;
+    imageView.animationImages = self.imageArray;
+    imageView.animationDuration = 100;
     NSLog(@"imageView.animationImages %@", imageView.animationImages[0]);
 
-    imageView.userInteractionEnabled = YES;
+  //  imageView.userInteractionEnabled = YES;
     
     [self.view addGestureRecognizer:swipe];
     [self.view addSubview:imageView];
     [imageView startAnimating];
 
 }
+
+- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
+    
+    NSLog(@"Screen was swiped");
+    
+
+    imageView.animationImages = self.imageArray;
+ 
+    // We know that both the imageView and the imageArrays are global
+    // need to find the current order of the array with nslog and implement
+    // a series of if statements to get to the next position in the array
+    
+    
+    
+    
+    // This is the animation duration you can turn it back on if uncommented
+    //   imageView.animationDuration = 1;
+    
+    
+    
+    imageView.userInteractionEnabled = YES;
+    
+   
+    
+    // This is a way to access the next object at index, previous attempts have failed
+//self.imageView = [imageArray objectAtIndex: 1];
+
+    [self.view addSubview:imageView];
+
+    [imageView startAnimating];
+    
+}
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -56,8 +104,6 @@
     [super viewDidUnload];
 }
 
-- (IBAction)swipe:(UISwipeGestureRecognizer *)sender {
-    
-    NSLog(@"Screen was swiped");
-}
+
+
 @end

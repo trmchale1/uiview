@@ -59,11 +59,11 @@
 		56A1962B19331A670077F539 /* GTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTViewController.m; path = ../GTViewController.m; sourceTree = "<group>"; };
 		56A1962C19331A670077F539 /* GTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GTViewController.xib; path = ../GTViewController.xib; sourceTree = "<group>"; };
 		56A1962F193329680077F539 /* workExample.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = workExample.jpg; sourceTree = "<group>"; };
-		56A1963519332C370077F539 /* GTImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTImageViewController.h; sourceTree = "<group>"; };
 		56A1963619332C370077F539 /* GTImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTImageViewController.m; sourceTree = "<group>"; };
 		56A1963719332C370077F539 /* GTImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GTImageViewController.xib; sourceTree = "<group>"; };
 		56AEF74519342790009DE24D /* app1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app1.png; sourceTree = "<group>"; };
 		56AEF7491934285B009DE24D /* app2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app2.png; sourceTree = "<group>"; };
+		56AEF74C1934629F009DE24D /* GTImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTImageViewController.h; path = ../GTImageViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +126,7 @@
 				56A1962A19331A670077F539 /* GTViewController.h */,
 				56A1962B19331A670077F539 /* GTViewController.m */,
 				56A1962C19331A670077F539 /* GTViewController.xib */,
-				56A1963519332C370077F539 /* GTImageViewController.h */,
+				56AEF74C1934629F009DE24D /* GTImageViewController.h */,
 				56A1963619332C370077F539 /* GTImageViewController.m */,
 				56A1963719332C370077F539 /* GTImageViewController.xib */,
 				56A1960A1933194A0077F539 /* GTAppDelegate.h */,
